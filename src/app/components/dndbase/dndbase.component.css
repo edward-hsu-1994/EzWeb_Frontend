@@ -1,0 +1,37 @@
+.ngx-dnd-container {
+  background-color: initial;
+  border: 2px solid red;
+  margin: 10px;
+  padding: 10px;
+}
+
+.ngx-dnd-container.gu-empty {
+  border: 2px dotted red;
+}
+
+.ngx-dnd-container:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.ngx-dnd-container .ex-moved {
+  background-color: #e74c3c;
+}
+
+.ngx-dnd-container .ex-over {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.ngx-dnd-container .handle {
+  padding: 0 5px;
+  margin-right: 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  cursor: move;
+}
+
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

@@ -1,0 +1,9 @@
+<ngx-dnd-container class="root-container" [removeOnSpill]="true" [model]="model.children" (drag)="change($event)" (drop)="change($event)"
+  (over)="change($event)" (out)="change($event)" (remove)="remove($event)">
+
+  <ng-template let-model="model" let-template="template">
+    {{model.properties.x}}
+    <ng-template appDynamicComponent></ng-template>
+  </ng-template>
+
+</ngx-dnd-container>

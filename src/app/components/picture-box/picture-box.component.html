@@ -1,7 +1,1 @@
-<div [ngStyle]="{
-  'background-image': 'url(' + (model.properties.url || url) + ')',
-  'background-size': 'cover',
-  'width': '100%',
-  'height':'100%'
-  }">
-</div>
+<img [src]="model.properties.url" witdh="100%" [alt]="model.properties.alt">

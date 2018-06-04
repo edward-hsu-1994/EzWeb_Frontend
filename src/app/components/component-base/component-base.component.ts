@@ -20,10 +20,12 @@ export class BaseComponent implements AfterContentChecked {
     if (!this.componentHosts) {
       return;
     }
-
+    console.log(this.model);
     const hosts = this.componentHosts.toArray();
     for (let index = 0; index < hosts.length; index++) {
       const host = hosts[index];
+
+      // if (!this.model.children[index]) { continue; }
 
       const componentFactory = this.componentFactoryResolver.resolveComponentFactory(
         this.dynamicComponentService.getComponent(this.model.children[index].componentName)

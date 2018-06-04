@@ -8,9 +8,11 @@ import { PictureBoxComponent } from './picture-box/picture-box.component';
 import { GridLayoutComponent } from './grid-layout/grid-layout.component';
 import { MatGridListModule } from '@angular/material';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
+import { DNDBaseComponent } from './dndbase/dndbase.component';
 
 export let components = [
   //#region Layouts
+  DNDBaseComponent,
   BlankLayoutComponent,
   GridLayoutComponent,
   //#endregion
@@ -27,7 +29,7 @@ export let components = [
     NgxDnDModule
   ],
   declarations: [DynamicComponentDirective, components],
-  exports: [BlankLayoutComponent],
+  exports: [BlankLayoutComponent, DNDBaseComponent],
   providers: [DynamicComponentService],
   entryComponents: components
 })
