@@ -1,5 +1,5 @@
-<mat-grid-list [cols]="model.properties.cols || 2" [rowHeight]="model.properties.rowHeight || '1:1'">
-  <mat-grid-tile *ngFor="let child of model.children">
+<mat-grid-list ngxDroppable class="ngx-dnd-container" class="ngx-dnd-container" [cols]="model.properties.cols || 2" [rowHeight]="model.properties.rowHeight || '1:1'">
+  <mat-grid-tile ngxDroppable class="ngx-dnd-item" *ngFor="let child of model.children">
     <ng-template appDynamicComponent>
     </ng-template>
   </mat-grid-tile>

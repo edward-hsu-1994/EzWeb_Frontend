@@ -7,8 +7,7 @@ import { DynamicComponentDirective } from './dynamic-component.directive';
 import { PictureBoxComponent } from './picture-box/picture-box.component';
 import { GridLayoutComponent } from './grid-layout/grid-layout.component';
 import { MatGridListModule } from '@angular/material';
-
-
+import { NgxDnDModule } from '@swimlane/ngx-dnd';
 
 export let components = [
   //#region Layouts
@@ -24,7 +23,8 @@ export let components = [
 @NgModule({
   imports: [
     CommonModule,
-    MatGridListModule
+    MatGridListModule,
+    NgxDnDModule
   ],
   declarations: [DynamicComponentDirective, components],
   exports: [BlankLayoutComponent],
