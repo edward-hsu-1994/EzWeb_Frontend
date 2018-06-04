@@ -1,3 +1,4 @@
+import { HyperLinkComponent } from './components/hyper-link/hyper-link.component';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,32 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-
-  orderableLists = [
-    {
-      'name': 'Section',
-      'children': [
-        {
-          'name': 'A String',
-          'inputType': 'string',
-          'icon': 'field-text',
-          'class': 'half',
-          'data': ''
-        },
-        {
-          'name': 'A String',
-          'inputType': 'string',
-          'icon': 'field-text',
-          'class': 'half',
-          'data': ''
-        }
-      ],
-      'inputType': 'section',
-      'icon': 'section',
-      'class': 'wide',
-      'data': ''
-    }
-  ];
 
   model = {
     children: [
@@ -82,4 +57,14 @@ export class AppComponent {
       }
     ]
   };
+
+
+  add() {
+    this.model.children[0].children.push({
+      componentName: 'HyperLinkComponent',
+      properties: { cols: 2 },
+      children: []
+    });
+    console.log(this.model);
+  }
 }

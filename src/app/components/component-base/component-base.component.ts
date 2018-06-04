@@ -1,9 +1,9 @@
-import { OnInit, ViewChildren, Input, ComponentFactoryResolver, QueryList, ViewChild, AfterViewInit } from '@angular/core';
+import { OnInit, ViewChildren, Input, ComponentFactoryResolver, QueryList, ViewChild, AfterContentChecked } from '@angular/core';
 import { DynamicComponentDirective } from '../dynamic-component.directive';
 import { ComponentModel } from '../ComponentModel';
 import { DynamicComponentService } from '../dynamic-component.service';
 
-export class BaseComponent implements AfterViewInit {
+export class BaseComponent implements AfterContentChecked {
   @ViewChildren(DynamicComponentDirective)
   componentHosts: QueryList<DynamicComponentDirective>;
 
@@ -16,9 +16,7 @@ export class BaseComponent implements AfterViewInit {
 
   }
 
-  ngAfterViewInit() {
-    console.log(this.componentHosts);
-
+  ngAfterContentChecked() {
     if (!this.componentHosts) {
       return;
     }
@@ -39,5 +37,4 @@ export class BaseComponent implements AfterViewInit {
       componentRef.changeDetectorRef.detectChanges();
     }
   }
-
 }
